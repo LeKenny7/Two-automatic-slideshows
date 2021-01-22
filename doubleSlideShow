@@ -1,16 +1,39 @@
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.right {
-	float: right;
-    width 100px;
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
 }
-.left{
-	float: left;
-    width 100px;
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  padding-bottom: 40px;
 }
+
+.button {
+  background-color: #000000; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.button:hover {
+  background-color: #464646;
+}
+
 .dot1 {
   height: 15px;
   width: 15px;
@@ -58,7 +81,7 @@ img {vertical-align: center;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 400px;
+  max-width: 100%;
   position: relative;
   margin: auto;
 }
@@ -91,57 +114,60 @@ img {vertical-align: center;}
   color: black;
 }
 </style>
-</head>
-<body>
 
-<h2 style="text-align:center">Multiple Slideshows</h2>
-<div class="left">
-<p>Slideshow 1:</p>
+
+<div class= "row">
+<div class = "column">
 <div class="slideshow-container">
-  <div class="mySlides1 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/IMG_8914.jpg?v=1606666674" style="width:100%">
+  <div class="mySlides1 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/mystical-moon-landscape-sunset-51444581.jpg?v=1611313903" style="width:100%">
   </div>
 
-  <div class="mySlides1 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/IMG_8921.jpg?v=1606666643" style="width:100%">
+  <div class="mySlides1 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/48-69681_54782048-c209-4344-80ea-29965c551a06.jpg?v=1611313912" style="width:100%">
   </div>
 
-  <div class="mySlides1 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/IMG_8920.jpg?v=1606666624" style="width:100%">
+  <div class="mySlides1 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/original.jpg?v=1611313918" style="width:100%">
   </div>
 
-  <a class="prev" onclick="showSlides1(-1,1)">&#10094;</a>
-  <a class="next" onclick="showSlides1(1,1)">&#10095;</a>
+  <a class="prev" onclick="showSlides1(-1,1)">❮</a>
+  <a class="next" onclick="showSlides1(1,1)">❯</a>
   <div style="text-align:center">
   <span class="dot1"></span> 
   <span class="dot1"></span> 
-  <span class="dot1"></span> 
+  <span class="dot1"></span>
 </div>
+  <div style ="text-align:center">
+  <button onclick = "location.href='collections/framed-prints'" class = "button">Shop Framed Prints</button>
+  </div>
 </div>
 </div>
 
-<div class = "right">
-<p>Slideshow 2:</p>
+<div class = "column">
 <div class="slideshow-container">
-  <button type = "button">Click Me!</button>
-  <div class="mySlides2 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/business-woman-with-wool-hat.jpg?v=1611114157" style="width:100%">
+  <div class="mySlides2 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/7456e6d5a5fb4dc1c7718be9f3df4b17.jpg?v=1611313921" style="width:100%">
   </div>
 
-  <div class="mySlides2 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/young-woman-posing-at-carnival.jpg?v=1611114144" style="width:100%">
+  <div class="mySlides2 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/images.jpg?v=1611313925" style="width:100%">
   </div>
 
-  <div class="mySlides2 fade">
-    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/IMG_8919_2.jpg?v=1606666606" style="width:100%">
+  <div class="mySlides2 fade inline-block">
+    <img src="https://cdn.shopify.com/s/files/1/0514/3379/9840/files/DstejonXoAAtfVc.jpg?v=1611313928" style="width:100%">
   </div>
 
-  <a class="prev" onclick="showSlides2(-1, 1)">&#10094;</a>
-  <a class="next" onclick="showSlides2(1, 1)">&#10095;</a>
+  <a class="prev" onclick="showSlides2(-1, 1)">❮</a>
+  <a class="next" onclick="showSlides2(1, 1)">❯</a>
   <div style="text-align:center">
   <span class="dot2"></span> 
   <span class="dot2"></span> 
-  <span class="dot2"></span> 
+  <span class="dot2"></span>
+</div>
+  <div style ="text-align:center">
+  <button onclick = "location.href='pages/custom-paintings'" class = "button">Shop Custom Paintings</button>
+  </div>
 </div>
 </div>
 </div>
@@ -209,6 +235,3 @@ function showSlides2(n, t) {
   time2 = setTimeout(function(){showSlides2(1,0);}, 3000); // Change image every 2 seconds
 }
 </script>
-
-</body>
-</html> 
